@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduPro - Learn Better</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">EduPro</div>
+      <nav>
+        <ul>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#premium">Buy Premium</a></li>
+          <li><a href="#chatbot">AI Chatbot</a></li>
+        </ul>
+      </nav>
+      <button id="toggleDark" class="dark-toggle">🌙</button>
+    </header>
+
+    <section class="hero">
+      <div class="reveal">
+        <h1>Empower Your Learning Journey</h1>
+        <p>Get 60% OFF on Premium + Free AI Chatbot for Life</p>
+        <a href="#premium" class="btn">Buy Premium</a>
+      </div>
+    </section>
+
+    <section id="courses" class="courses">
+  <div class="reveal">
+    <h2>Our Top Courses</h2>
+    <div class="course-list">
+      <a href="https://youtube.com/playlist?list=PLu0W_9lII9agwh1XjRt242xIpHhPT2llg&si=VoAxkY0aHMvBx0GC" target="_blank" style="text-decoration: none; color: inherit;">
+        <div class="course-card">Python for Beginners</div>
+      </a>
+      <a href="https://youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w&si=dlaBimpz4jMf9ns3" target="_blank" style="text-decoration: none; color: inherit;">
+        <div class="course-card">Web Development Bootcamp</div>
+      </a>
+      <a href="https://youtu.be/ua-CiDNNj30?si=C8Swb3o01nkRPySb" target="_blank" style="text-decoration: none; color: inherit;">
+        <div class="course-card">Data Science with R</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+    <section id="premium" class="premium-offer">
+      <div class="reveal">
+        <h2>Buy Premium - Flat 60% Off!</h2>
+        <p>Unlock all courses and get lifetime access to our AI Chatbot</p>
+
+        <!-- ✅ PayPhi Form Integration -->
+          <form action="http://localhost:5000/api/payphi/create-order" method="POST" enctype="application/x-www-form-urlencoded">
+          <input type="hidden" name="amount" value="99900" />
+          <input type="hidden" name="userId" value="18" />
+          
+          <!-- Replace with dynamic value if needed -->
+          <button type="submit">Buy Now</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="chatbot" class="chatbot-info">
+      <div class="reveal">
+        <h2>AI Chatbot Support</h2>
+        <p>Ask doubts anytime. Available 24x7 for Premium users.</p>
+      </div>
+    </section>
+
+    <div id="chat-container" class="chatbox hidden">
+      <div id="chat-messages" class="chat-messages"></div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Ask something..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <div id="chat-alert" class="alert hidden">
+      <p>🔒 Your 7-day trial expired. Buy Premium to use the chatbot!</p>
+    </div>
+
+    <footer>
+      <p>© 2025 EduPro. All rights reserved.</p>
+    </footer>
+
+    <div id="dark-overlay"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
